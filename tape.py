@@ -34,3 +34,8 @@ class Tape:
         print(line3 + "+----")
         return 'HEAD pos = ' + str(self._headPosition) + '| DATA = ' + str(self._data)
 
+    def setData(self, newData):
+        self._data = newData
+
+    def getData(self):
+        return self._data
