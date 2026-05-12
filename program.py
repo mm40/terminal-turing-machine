@@ -36,3 +36,23 @@ class Program:
 
         return (self._current, self._next)
 
+    def executeLine(self):
+        # Executes a line of code. Returns -1 for negative outcome, 1 for positive outcome, and 0 if program hasn-t ended
+        c = self._current
+        n = self._next
+        t = self._dataTape
+
+        self._state = n[0]
+        t.setCurrentValue(n[1])
+        t.moveHeadBy(n[2])
+
+        self._current = n        
+        if n[0] == '+': # positive program outcome
+            return (1, None, None)
+        elif n[0] == '-': # negative negative program outcome
+            return (-1, None, None)
+        else:
+            self._next = self._code[int(n[0]), t.getCurrentValue()]
+            #return (0,self._current, self._next)
+            return (0,(n[0], t.getCurrentValue()), self._next)
+        
