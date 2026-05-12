@@ -29,3 +29,10 @@ class Program:
 
         self._code[(qi, aj)] = (qip, ajp, r)
 
+    def initialize(self):
+        self._state = 0
+        self._current = (self._state, self._dataTape.getCurrentValue())
+        self._next = self._code[self._current]
+
+        return (self._current, self._next)
+
