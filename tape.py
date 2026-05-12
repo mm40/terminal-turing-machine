@@ -39,3 +39,10 @@ class Tape:
 
     def getData(self):
         return self._data
+
+    def moveHeadBy(self, offset):
+        self._headPosition = self._headPosition + offset
+
+    def moveHeadTo(self, newPosition):
+        self._headPosition = newPosition
+
