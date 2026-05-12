@@ -29,5 +29,14 @@ def readFile(path, destProgram, destTape):
                     destTape.setData(result)
 
 
+
 def main():
-    print("hello")
+    t1 = Tape()
+    if len(sys.argv) > 2:
+        t1.setDisplayWidth(int(sys.argv[2]))
+    p1 = Program(t1)
+    readFile(sys.argv[1], p1, t1)
+    run(t1, p1)
+
+if __name__ == "__main__":
+    main()
