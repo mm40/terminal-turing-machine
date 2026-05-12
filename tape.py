@@ -46,3 +46,16 @@ class Tape:
     def moveHeadTo(self, newPosition):
         self._headPosition = newPosition
 
+    def setCurrentValue(self, newValue):
+        if newValue == blancCharacter:
+            # Not working if self._headposition points to blanc character
+            #del self._data[self._headPosition]
+            self._data.pop(self._headPosition, None)
+        else:
+            self._data[self._headPosition] = newValue
+
+    def getCurrentValue(self):
+        return self._data.get(self._headPosition, blancCharacter)
+
+    def setDisplayWidth(self, width):
+        self._displayWidth = width
