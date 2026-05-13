@@ -12,7 +12,7 @@ Written in python, just clone the repo, run some of the example programs, or wri
 
 ## Usage
 - Run a program, for instance`./main.py program-examples/pr1.txt`
-- Press enter to move head to the right
+- Press enter to run the program one instruction at a time
 - Type h for additional options
 
 ## Program example:
